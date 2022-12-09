@@ -36,6 +36,7 @@ enum nfc_dep_mode {
 }
 
 struct nfc_dep_info {
+    align (1):
     ubyte[10] abtNFCID3;
     ubyte btDID;
     ubyte btBS;
@@ -48,6 +49,7 @@ struct nfc_dep_info {
 }
 
 struct nfc_iso14443a_info {
+    align (1):
     ubyte[2] abtAtqa;
     ubyte btSak;
     size_t szUidLen;
@@ -57,6 +59,7 @@ struct nfc_iso14443a_info {
 }
 
 struct nfc_felica_info {
+    align (1):
     size_t szLen;
     ubyte btResCode;
     ubyte[8] abtId;
@@ -65,6 +68,7 @@ struct nfc_felica_info {
 }
 
 struct nfc_iso14443b_info {
+    align (1):
     ubyte[4] abtPupi;
     ubyte[4] abtApplicationData;
     ubyte[3] abtProtocolInfo;
@@ -72,6 +76,7 @@ struct nfc_iso14443b_info {
 }
 
 struct nfc_iso14443bi_info {
+    align (1):
     ubyte[4] abtDIV;
     ubyte btVerLog;
     ubyte btConfig;
@@ -80,30 +85,36 @@ struct nfc_iso14443bi_info {
 }
 
 struct nfc_iso14443biclass_info {
+    align (1):
     ubyte[8] abtUID;
 }
 
 struct nfc_iso14443b2sr_info {
+    align (1):
     ubyte[8] abtUID;
 }
 
 struct nfc_iso14443b2ct_info {
+    align (1):
     ubyte[4] abtUID;
     ubyte btProdCode;
     ubyte btFabCode;
 }
 
 struct nfc_jewel_info {
+    align (1):
     ubyte[2] btSensRes;
     ubyte[4] btId;
 }
 
 struct nfc_barcode_info {
+    align (1):
     size_t szDataLen;
     ubyte[32] abtData;
 }
 
 union nfc_target_info {
+    align (1):
     nfc_iso14443a_info nai;
     nfc_felica_info nfi;
     nfc_iso14443b_info nbi;
@@ -144,11 +155,13 @@ enum nfc_mode {
 }
 
 struct nfc_modulation {
+    align (1):
     nfc_modulation_type nmt;
     nfc_baud_rate nbr;
 }
 
 struct nfc_target {
+    align (1):
     nfc_target_info nti;
     nfc_modulation nm;
 }
