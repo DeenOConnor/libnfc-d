@@ -6,7 +6,7 @@ Use with `import libnfc.nfc;`
 
 Compile with the contents of src and link with libnfc, for example:
 
-`dmd src/* examples/nfc-list.d -L/lib/x86_64-linux-gnu/libnfc.so.6 -ofnfc-list`
+`dmd src/libnfc/* examples/nfc-list.d -L/lib/x86_64-linux-gnu/libnfc.so.6 -ofnfc-list`
 
 With `dub` add libnfc folder to any source path
 
